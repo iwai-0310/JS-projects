@@ -46,16 +46,16 @@ black_background.appendChild(mydiv)
     selectTag.style.top='20px'
     selectTag.style.left='50px'
         // g values of planets
-        mer : 3.7
-        ven : 8.9
-        ear : 9.8
-        mar : 3.7
-        jup : 24.8
-        sat : 10.4
-        ura : 8.7
-        nep : 11.15
-        plu : 0.06
-        moo : 1.6
+        // mer : 3.7
+        // ven : 8.9
+        // ear : 9.8
+        // mar : 3.7
+        // jup : 24.8
+        // sat : 10.4
+        // ura : 8.7
+        // nep : 11.15
+        // plu : 0.06
+        // moo : 1.6
         //adding options to the select tag
         const option0=document.createElement('option')
         option0.textContent='--select planet--'
@@ -143,7 +143,14 @@ black_background.appendChild(Resultdiv)
     SubResult1.style.left='200px'
     SubResult1.src='sun.png'
     Resultdiv.appendChild(SubResult1)
-
+    //adding the heading part
+    const headWithInfo=document.createElement('h2')
+    headWithInfo.style.color='white'
+    headWithInfo.textContent='Well I hope its not that hot'
+    headWithInfo.style.position='relative'
+    headWithInfo.style.left='600px'
+    headWithInfo.style.bottom='200px'
+    Resultdiv.appendChild(headWithInfo)
 
     //let do the function part of the project
     
@@ -180,6 +187,71 @@ black_background.appendChild(Resultdiv)
         const print=CalcualteMass(Massint,Planetflo)
         const printApprox=Math.round(print)
         console.log(printApprox)
+        // mer : 3.7
+        // ven : 8.9
+        // ear : 9.8
+        // mar : 3.7
+        // jup : 24.8
+        // sat : 10.4
+        // ura : 8.7
+        // nep : 11.15
+        // plu : 0.06
+        // moo : 1.6
+        const image=document.querySelector('img')
+        switch(planetId){
+            case 'mer':
+                console.log(image)
+                image.src='mercury.jpg'
+                const merval=CalcualteMass(Massint,Planetflo)
+                headWithInfo.textContent=`${merval} N `
+                // SubResult1.src='sun.png'
+                break
+            case 'ven':
+                image.src='Venus.png'
+                const venval=CalcualteMass(Massint,Planetflo)
+                headWithInfo.textContent=`${venval} N `
+                break
+            case 'ear':
+                image.src='Earth.jpg'
+                const earval=CalcualteMass(Massint,Planetflo)
+                headWithInfo.textContent=`${earval} N `
+                break
+            case 'mar':
+                image.src='Mars.jpg'
+                const marval=CalcualteMass(Massint,Planetflo)
+                headWithInfo.textContent=`${marval} N `
+                break
+            case 'jup':
+                image.src='Jupyter.jpg'
+                const jupval=CalcualteMass(Massint,Planetflo)
+                headWithInfo.textContent=`${jupval} N `
+                break
+            case 'sat':
+                image.src='Saturn.jpg'
+                const satval=CalcualteMass(Massint,Planetflo)
+                headWithInfo.textContent=`${satval} N `
+                break
+            case 'ura':
+                image.src='Uranus.jpg'
+                const uraval=CalcualteMass(Massint,Planetflo)
+                headWithInfo.textContent=`${uraval} N `
+                break
+            case 'nep':
+                image.src='Neptune.jpg'
+                const nepval=CalcualteMass(Massint,Planetflo)
+                headWithInfo.textContent=`${nepval} N `
+                break
+            case 'plu':
+                image.src=''
+                const pluval=CalcualteMass(Massint,Planetflo)
+                headWithInfo.textContent=`${pluval} N `
+                break
+            case 'moo':
+                image.src='moon.jpg'
+                const mooval=CalcualteMass(Massint,Planetflo)
+                headWithInfo.textContent=`${mooval} N `
+                break
+            default:
 
-        
+        }
     })
