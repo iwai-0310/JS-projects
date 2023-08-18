@@ -59,47 +59,58 @@ black_background.appendChild(mydiv)
         //adding options to the select tag
         const option0=document.createElement('option')
         option0.textContent='--select planet--'
+        option0.id='not'
         option0.style.color='grey'
-        option0.value='op1'
+        option0.value=0
         selectTag.appendChild(option0)
         const option1=document.createElement('option')
         option1.textContent='Mercury'
+        option1.id='mer'
         option1.value=3.7
         selectTag.appendChild(option1)
         const option2=document.createElement('option')
         option2.textContent='Venus'
+        option2.id='ven'
         option2.value=8.9
         selectTag.appendChild(option2)
         const option3=document.createElement('option')
         option3.textContent='Earth'
+        option3.id='ear'
         option3.value=9.8
         selectTag.appendChild(option3)
         const option4=document.createElement('option')
         option4.textContent='Mars'
+        option4.id='mar'
         option4.value=3.7
         selectTag.appendChild(option4)
         const option5=document.createElement('option')
         option5.textContent='Jupiter'
+        option5.id='jup'
         option5.value=24.8
         selectTag.appendChild(option5)
         const option6=document.createElement('option')
         option6.textContent='Saturn'
+        option6.id='sat'
         option6.value=10.4
         selectTag.appendChild(option6)
         const option7=document.createElement('option')
         option7.textContent='Uranus'
+        option7.id='ura'
         option7.value=8.7
         selectTag.appendChild(option7)
         const option8=document.createElement('option')
         option8.textContent='Neptune'
+        option8.id='nep'
         option8.value=11.15
         selectTag.appendChild(option8)
         const option9=document.createElement('option')
         option9.textContent='Pluto'
+        option9.id='plu'
         option9.value=0.06
         selectTag.appendChild(option9)
         const option10=document.createElement('option')
         option10.textContent='Moon'
+        option10.id='moo'
         option10.value=1.6
         selectTag.appendChild(option10)
     
@@ -145,13 +156,21 @@ black_background.appendChild(Resultdiv)
     buttonSend.addEventListener('click',()=>{
     const MassElement=document.querySelector('input')
     const Mass=MassElement.value;
+   
+    
     // console.log(Mass)
 
     const PlanetElement=document.querySelector('select')
-    const Planet=PlanetElement.value; 
+    const Planet=PlanetElement.value
+        // const PlanetId=PlanetElement.id
+        // console.log(PlanetId)
         // console.log(Mass)
         // const type=typeof Mass
         // console.log(type)
+        const selectedOption = PlanetElement.querySelector('option:checked');
+        const planetId = selectedOption.id;
+        console.log(planetId);
+
         const Massint=parseInt(Mass)
         console.log(Massint)
 
@@ -161,4 +180,6 @@ black_background.appendChild(Resultdiv)
         const print=CalcualteMass(Massint,Planetflo)
         const printApprox=Math.round(print)
         console.log(printApprox)
+
+        
     })
